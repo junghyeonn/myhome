@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>계정 만들기</title>
+    <style>
+        #essential {
+            color: red;
+            font-size: 10pt;
+        }
+            .c1 {
+                font-weight : bold;
+                background-color: lightblue;
+                width : 800px;
+                padding-left: 10px;
+            }
+
+            .c-label {
+                display :inline-block;
+                margin-left : 8px;
+                width : 130px;
+                text-align: right;
+                padding-right : 8px;
+            }
+
+            .c-label span {
+                color: red;
+            }
+
+            .button-location {
+                margin-left: 200px;
+            }
+    </style>
+</head>
+<body>
+<h2>취업 정보 계정 만들기</h2>
+<p id="essential">* 필수 입력 항목</p>
+
+<form name="usr_info" method="post" action="{% url 'createform' %}">
+
+    <div>
+        <p class="c1">기본 정보</p>
+        <label class="c-label">이름<span>*</span> </label>
+        <input type="text" name="name" id="name" size="8">
+    </div>
+
+    <div>
+        <label class="c-label" for="email">이메일<span>*</span> </label>
+        <input type="email" name="email" id="email" size="15" placeholder="id@domain_name">
+    </div>
+
+    <div>
+        <label class="c-label" for="password">암호<span>*</span> </label>
+        <input type="password" id="password" name="password" size="12">
+    </div>
+
+    <div>
+        <label class="c-label" for="confirm_password">암호 확인<span>*</span> </label>
+        <input type="password" id="confirm_password" name="confirm_password" size="12">
+    </div>
+
+    <div>
+        <label class="c-label" for="phone">모바일 폰<span>*</span> </label>
+        <input type="tel" id="phone" name="phone" size="13" placeholder="010-0000-0000">
+    </div>
+
+    <div>
+        <label class="c-label" for="homepage">개인 홈페이지 </label>
+        <input type="url" id="homepage" name="homepage" size="30" placeholder="http://">
+
+    </div>
+
+    <div>
+        <label class="c-label" for="address">주소<span>*</span> </label>
+        <input type="text" id="address" name="address" size="30">
+    </div>
+
+    <div>
+        <p class="c1">학 력</p>
+        <label class="c-label" for="school">학교 명<span>*</span> </label>
+        <input type="text" id="school" name="school" size="12">
+    </div>
+
+    <div>
+        <label class="c-label" for="major">전 공<span>*</span> </label>
+        <input type="text" id="major" name="major" size="12">
+    </div>
+
+    <div>
+        <label class="c-label" for="graduation">졸업 여부<span>*</span> </label>
+        <select id="graduation" name="graduation">
+        <option value="">---선택---</option>
+        <option value="졸업예정">졸업예정</option>
+        <option value="졸업">졸업</option>
+        </select>
+    </div>
+
+    <div>
+        <label class="c-label" for="graduation_date">졸업(예정)일:</label>
+        <input type="date" id="graduation_date" name="graduation_date">
+    </div>
+
+    <div>
+        <p class="c1">업무 경력</p>
+        <label class="c-label" for="company">근무업체명 </label>
+        <input type="text" id="company" name="company" size="20">
+    </div>
+
+    <div>
+        <label class="c-label" for="position">직 위</label>
+        <input type="text" id="position" name="position" size="10">
+    </div>
+
+    <div>
+        <label class="c-label" for="person_charge">담당 업무</label>
+        <textarea id="person_charge" name="person_charge" rows="10" cols="80">이전 업체에서 담당한 업무를 기술하시오.
+        </textarea>
+    </div>
+
+    <div>
+        <label class="c-label" for="work_year">근무년수</label>
+        <input type="number" id="work_year" name="work_year" min="0" max="10" step="0.5">년
+    </div>
+
+    <div>
+        <p class="c1">자기소개서</p>
+        <label class="c-label" for="attach">첨부 파일:</label>
+        <input type="file" id="attach" name="attach">
+    </div>
+
+    <div class="button-location">
+        <input type="submit" value="제출">
+        <input type="reset" value="재작성">
+    </div>
+
+</form>
+</body>
+</html>

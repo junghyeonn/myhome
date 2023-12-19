@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인 화면</title>
+</head>
+<body>
+<h3>회원 로그인</h3>
+<hr>
+<form name="login" action="{% url 'logined' %}">
+    <p>
+        <label for="email">이메일 </label>
+        <input type="email" name="email" id="email" size="15" placeholder="id@domain_name"><br><br>
+        <label for="password">암 호 </label>
+        <input type="password" id="password" name="password" size="12"><br>
+    </p>
+
+    <input type="submit" value="로그인">
+
+</body>
+</html>
